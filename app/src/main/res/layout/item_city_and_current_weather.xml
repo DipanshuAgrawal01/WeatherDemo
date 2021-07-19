@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.weatherdemo.util.ExtensionsKt" />
+
+        <variable
+            name="cityandcurrentweather"
+            type="com.example.weatherdemo.data.CityAndCurrentWeather" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.weatherdemo.citylist.CityListViewModel" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:onClick="@{() -> viewmodel.onCityClicked(cityandcurrentweather.city.id)}"
+        app:cardCornerRadius="0dp"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_weather_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/description_weather_icon"
+                android:scaleType="centerCrop"
+                app:image_from_url="@{cityandcurrentweather.currentWeather.iconUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_weather_icon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_city_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{cityandcurrentweather.city.name}"
+                        android:textSize="18sp"
+                        tools:text="Санкт-Петербург" />
+
+                    <TextView
+                        android:id="@+id/text_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@{ExtensionsKt.getTemperatureString(cityandcurrentweather.currentWeather.temperature)}"
+                        android:textSize="18sp"
+                        tools:text="30.0°" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_weather_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{cityandcurrentweather.currentWeather.description}"
+                    android:textSize="16sp"
+                    tools:text="Облачно, с проясненениями" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

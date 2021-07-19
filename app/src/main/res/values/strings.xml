@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">WeatherDemo</string>
+    <string name="fragment_city_list_title">Cities</string>
+    <string name="fragment_add_city_title">Add City</string>
+    <string name="fragment_city_info_title">City Details</string>
+    <string name="description_weather_icon">Description weather</string>
+
+    <string name="text_ok">OK</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_city_name">City Name</string>
+
+    <string name="text_air_temperature">Air Temperature:</string>
+    <string name="text_temperature">Temperature:</string>
+    <string name="text_feels_like">Feels like:</string>
+    <string name="text_sunrise">Sunrise</string>
+    <string name="text_sunset">Sunset</string>
+    <string name="text_pressure">Pressure</string>
+    <string name="text_humidity">Humidity</string>
+    <string name="text_visibility">Visibility</string>
+    <string name="text_wind_speed">Wind speed</string>
+    <string name="text_wind_degree">Wind degree</string>
+
+    <string name="text_weather_daily_forecast">Weather daily forecast:</string>
+    <string name="text_night">Night:</string>
+    <string name="text_morning">Morning:</string>
+    <string name="text_day">day:</string>
+    <string name="text_evening">Evening:</string>
+
+    <string name="text_percent">%s%%</string>
+    <string name="text_meters">%s м.</string>
+    <string name="text_meters_in_second">%s м/с</string>
+    <string name="text_degrees">%s°</string>
+
+    <string name="text_connection_restored">Internet connection restored..</string>
+</resources>
